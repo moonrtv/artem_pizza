@@ -1,9 +1,9 @@
 import {calculateCost} from './CalculateCost';
 
-import {Container} from './OrderPizza.styled';
+import {Container} from './PizzaOrder.styled';
 
-export const OrderPizza = ({state}) => {
-  const renderConsistPizza = () => {
+export const PizzaOrder = ({state}) => {
+  const RenderPizzaConsist = () => {
     return (
       <>
         {Object.values(state).map((item) => {
@@ -26,7 +26,7 @@ export const OrderPizza = ({state}) => {
   return (
     <Container>
       <h1>Твоя пицца</h1>
-      <div>{renderConsistPizza()}</div>
+      <RenderPizzaConsist />
       <br />
       <div>{calculateCost(state)} руб</div>
     </Container>

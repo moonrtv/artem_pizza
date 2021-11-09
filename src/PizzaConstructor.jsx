@@ -1,15 +1,15 @@
-import {Form, Fieldset} from './ConstructorPizza.styled';
+import {Form, Fieldset} from './PizzaConstructor.styled';
 
 import {calculateCost} from './CalculateCost';
 
-export const ConstructorPizza = ({updateRadio, updateChecked, handleSubmitOrder, state}) => {
+export const PizzaConstructor = ({updateRadio, updateChecked, handleSubmitOrder, state}) => {
   const handleSubmit = (event) => {
     event.preventDefault();
 
     handleSubmitOrder();
   };
 
-  const renderConstructorPizza = (
+  const renderPizzaConstructor = (
     <>
       <Fieldset>
         <legend>Размер</legend>
@@ -170,7 +170,7 @@ export const ConstructorPizza = ({updateRadio, updateChecked, handleSubmitOrder,
     <div>
       <Form onSubmit={handleSubmit}>
         <h1>Собери свою пиццу</h1>
-        {renderConstructorPizza}
+        {renderPizzaConstructor}
         <button>Заказать за {calculateCost(state)} руб</button>
       </Form>
     </div>
