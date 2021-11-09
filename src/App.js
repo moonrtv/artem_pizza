@@ -9,6 +9,7 @@ import {LoginPage} from './LoginPage';
 import {RegistrationPage} from './RegistrationPage';
 import {NotFoundPage} from './NotFoundPage';
 
+
 const App = () => {
   const {pizza, updateRadioParametersForPizza, updateCheckedParametersFromPizza} = useContext(PizzaContext);
   const [isSubmit, setIsSubmit] = useState(true);
