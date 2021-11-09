@@ -1,8 +1,8 @@
-import {Form, Fieldset} from './PizzaConstructor.styled';
+import {Form, Fieldset} from './PizzaConstructorPage.styled';
 
-import {calculateCost} from './CalculateCost';
+import {calculateCost} from '../utils/CalculateCost';
 
-export const PizzaConstructor = ({updateRadio, updateChecked, handleSubmitOrder, state}) => {
+export const PizzaConstructorPage = ({updateRadio, updateChecked, handleSubmitOrder, state}) => {
   const handleSubmit = (event) => {
     event.preventDefault();
 

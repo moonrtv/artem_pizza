@@ -1,6 +1,7 @@
 import React, {useState, useContext} from 'react';
-import {PizzaConstructor} from './PizzaConstructor';
-import {PizzaOrder} from './PizzaOrder';
+
+import {PizzaConstructorPage} from './PizzaConstructorPage';
+import {PizzaOrderPage} from './PizzaOrderPage';
 import {PizzaContext} from './PizzaContext';
 
 const App = () => {
@@ -14,14 +15,14 @@ const App = () => {
   return (
     <>
       {isSubmit && (
-        <PizzaConstructor
+        <PizzaConstructorPage
           updateRadio={updateRadioParametersForPizza}
           updateChecked={updateCheckedParametersFromPizza}
           handleSubmitOrder={handleSubmit}
           state={pizza}
         />
       )}
-      {!isSubmit && <PizzaOrder state={pizza} />}
+      {!isSubmit && <PizzaOrderPage state={pizza} />}
     </>
   );
 };

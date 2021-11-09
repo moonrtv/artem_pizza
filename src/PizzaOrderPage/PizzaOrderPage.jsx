@@ -1,8 +1,8 @@
-import {calculateCost} from './CalculateCost';
+import {calculateCost} from '../utils/CalculateCost';
 
-import {Container} from './PizzaOrder.styled';
+import {Container} from './PizzaOrderPage.styled';
 
-export const PizzaOrder = ({state}) => {
+export const PizzaOrderPage = ({state}) => {
   const RenderPizzaConsist = () => {
     return (
       <>
@@ -28,7 +28,7 @@ export const PizzaOrder = ({state}) => {
       <h1>Твоя пицца</h1>
       <RenderPizzaConsist />
       <br />
-      <div>{calculateCost(state)} руб</div>
+      <h4>Итог: {calculateCost(state)} руб</h4>
     </Container>
   );
 };
