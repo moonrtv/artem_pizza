@@ -11,6 +11,7 @@ const App = () => {
     setIsSubmit(false);
   };
 
+
   return (
     <>
       {isSubmit && (
@@ -24,6 +25,7 @@ const App = () => {
       {!isSubmit && <PizzaOrder state={pizza} />}
     </>
   );
+
 };
 
 export default App;
