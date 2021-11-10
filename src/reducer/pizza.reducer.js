@@ -19,6 +19,7 @@ export const reducer = (parameters, action) => {
       [action.payload.type]: [...temp],
     };
   }
+
   if (action.type === 'radio') {
     return {
       ...parameters,

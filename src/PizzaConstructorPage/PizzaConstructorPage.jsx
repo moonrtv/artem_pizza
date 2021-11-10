@@ -1,11 +1,15 @@
-import {Form, Fieldset} from './PizzaConstructor.styled';
+import {useNavigate} from 'react-router-dom';
+import {calculateCost} from '../utils/CalculateCost';
 
-import {calculateCost} from './CalculateCost';
+import {Form, Fieldset} from './PizzaConstructorPage.styled';
 
-export const PizzaConstructor = ({updateRadio, updateChecked, handleSubmitOrder, state}) => {
+export const PizzaConstructorPage = ({updateRadio, updateChecked, handleSubmitOrder, state}) => {
+  const navigate = useNavigate();
+
   const handleSubmit = (event) => {
     event.preventDefault();
 
+    navigate('/order');
     handleSubmitOrder();
   };
 

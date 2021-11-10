@@ -1,7 +1,15 @@
 import {createContext, useReducer} from 'react';
 
-import {reducer} from './pizza.reducer';
-import {initialState} from './constants';
+import {reducer} from './reducer/pizza.reducer';
+
+const initialState = {
+  size: {id: 'size30', name: '30', cost: 200},
+  dough: {},
+  sauce: {},
+  cheese: [],
+  vegetables: [],
+  meat: [],
+};
 
 export const PizzaContext = createContext(null);
 
