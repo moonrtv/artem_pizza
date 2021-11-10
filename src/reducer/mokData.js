@@ -1,0 +1,18 @@
+export const parameterCostForPizza = {
+  size30: '200',
+  size35: '250',
+  thin: '0',
+  lush: '0',
+  tomatoSauce: '0',
+  whiteSauce: '0',
+  spicySauce: '0',
+  mozzarella: '29',
+  сheddar: '29',
+  dorBlue: '29',
+  tomato: '29',
+  mushrooms: '29',
+  pepper: '29',
+  bacon: '29',
+  pepperoni: '29',
+  ham: '29',
+};
