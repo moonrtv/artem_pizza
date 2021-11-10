@@ -1,5 +1,7 @@
 # Приложение по заказу пиццы :pizza:
 
+[![Node.js CI](https://github.com/moonrtv/artem_pizza/actions/workflows/production.yml/badge.svg?branch=main)](https://github.com/moonrtv/artem_pizza/actions/workflows/production.yml)
+
 Запустить приложение для разработки можно:
 
 ### `npm start`
