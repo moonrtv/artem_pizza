@@ -1,11 +1,11 @@
 import {Link} from 'react-router-dom';
 
-export const LoginPage = () => {
+export const Checkout = () => {
   return (
     <>
       <Link to="/">Вернуться на страницу заказа</Link>
       <br />
-      <h1>Страница логина</h1>
+      <h1>Оформление заказа</h1>
     </>
   );
 };

@@ -1,13 +1,11 @@
 export const calculateCost = (state) => {
-  return Object.values(state).reduce((arr, item) => {
-    let count = 0;
+  const result = Object.values(state).reduce((arr, item) => {
+    item.forEach((elem) => {
+      arr += elem.checked ? Number(elem.cost) : 0;
+    });
 
-    if (Array.isArray(item) && item.length > 0) {
-      item.forEach((i) => {
-        count = count + Number(i.cost);
-      });
-    }
-
-    return arr + Number(item.cost || 0) + count;
+    return arr;
   }, 0);
+
+  return result;
 };

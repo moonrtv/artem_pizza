@@ -1,13 +1,13 @@
 import {render, screen} from '@testing-library/react';
 import {BrowserRouter as Router} from 'react-router-dom';
 
-import {PizzaOrdersPage} from './PizzaOrdersPage';
+import {Orders} from './Orders';
 
-describe('PizzaOrdersPage', () => {
-  it('render PizzaOrdersPage', () => {
+describe('Orders', () => {
+  it('render Orders', () => {
     render(
       <Router>
-        <PizzaOrdersPage />
+        <Orders />
       </Router>
     );
     const h1Element = screen.getByText(/Мои заказы/i);

@@ -1,32 +1,23 @@
-import {parameterCostForPizza} from './mokData';
-
 export const reducer = (parameters, action) => {
-  if (action.type === 'addCheckbox') {
-    return {
-      ...parameters,
-      [action.payload.type]: [
-        ...parameters[action.payload.type],
-        {id: action.payload.id, title: action.payload.title, cost: parameterCostForPizza[action.payload.id]},
-      ],
-    };
-  }
-
-  if (action.type === 'deleteCheckbox') {
-    const temp = parameters[action.payload.type].filter((item) => item.id !== action.payload.id);
+  if (action.type === 'checkbox') {
+    const temp = parameters[action.payload.name].map((item) =>
+      item.id === action.payload.id ? {...item, checked: !item.checked} : {...item}
+    );
 
     return {
       ...parameters,
-      [action.payload.type]: [...temp],
+      [action.payload.name]: [...temp],
     };
   }
 
   if (action.type === 'radio') {
+    const temp = parameters[action.payload.name].map((item) =>
+      item.id === action.payload.id ? {...item, checked: true} : {...item, checked: false}
+    );
+
     return {
       ...parameters,
-      [action.payload.type]: {
-        ...parameters[action.payload.type],
-        ...{id: action.payload.id, title: action.payload.title, cost: parameterCostForPizza[action.payload.id]},
-      },
+      [action.payload.name]: [...temp],
     };
   }
 };

@@ -1,13 +1,13 @@
 import {render, screen} from '@testing-library/react';
 import {BrowserRouter as Router} from 'react-router-dom';
 
-import {NotFoundPage} from './NotFoundPage';
+import {NotFound} from './NotFound';
 
-describe('NotFoundPage', () => {
-  it('render NotFoundPage', () => {
+describe('NotFound', () => {
+  it('render NotFound', () => {
     render(
       <Router>
-        <NotFoundPage />
+        <NotFound />
       </Router>
     );
     const h1Element = screen.getByText(/404 страница не найдена/i);

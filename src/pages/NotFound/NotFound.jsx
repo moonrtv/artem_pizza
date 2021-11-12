@@ -1,12 +1,11 @@
 import {Link} from 'react-router-dom';
 
-export const PizzaOrdersPage = () => {
+export const NotFound = () => {
   return (
-    <>
+    <div>
       <Link to="/">Вернуться на страницу заказа</Link>
       <br />
-      <h1>Мои заказы</h1>
-      <p>Список пока пуст</p>
-    </>
+      <h1>404 страница не найдена!</h1>
+    </div>
   );
 };
