@@ -3,7 +3,7 @@ import {createContext, useReducer, useContext, useState} from 'react';
 import {reducer} from './reducer/pizza.reducer';
 
 import {MIN, MAX} from './utils/constants';
-import {parameterCostForPizza, initialState} from './reducer/mokData';
+import {initialState} from './reducer/mokData';
 
 export const PizzaContext = createContext(null);
 
@@ -26,23 +26,23 @@ export const PizzaProvider = ({children}) => {
 
     dispatch({
       type: type,
-      payload: {type, id, name, value, cost: parameterCostForPizza[id]},
+      payload: {type, id, name, value},
     });
   };
 
   const updateCheckedParameters = (event) => {
-    const {name, id, value, type} = event.target;
+    const {name, id, value} = event.target;
+
+    const type = state[name].includes(value) ? 'deleteChecked' : 'addChecked';
 
     dispatch({
       type,
-      payload: {type, id, name, value, cost: parameterCostForPizza[id]},
+      payload: {id, name, value},
     });
   };
 
   return (
-    <PizzaContext.Provider
-      value={{pizza: state, orderNumber, makeOrder, updateRadioParameters, updateCheckedParameters}}
-    >
+    <PizzaContext.Provider value={{state, orderNumber, makeOrder, updateRadioParameters, updateCheckedParameters}}>
       {children}
     </PizzaContext.Provider>
   );

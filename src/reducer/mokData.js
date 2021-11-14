@@ -1,85 +1,73 @@
-export const parameterCostForPizza = {
-  1: '200',
-  2: '250',
-  3: '0',
-  4: '0',
-  5: '0',
-  6: '0',
-  7: '0',
-  8: '29',
-  9: '29',
-  10: '29',
-  11: '29',
-  12: '29',
-  13: '29',
-  14: '29',
-  15: '29',
-  16: '29',
-};
+export const SIZE = 'size';
+export const DOUGH = 'dough';
+export const SAUCE = 'sauce';
+export const CHEESE = 'cheese';
+export const VEGETABLES = 'vegetables';
+export const MEAT = 'meat';
 
-export const PARAMETERS_FOR_PIZZA = {
-  SIZE: 'size',
-  DOUGH: 'dough',
-  SAUCE: 'sauce',
-  CHEESE: 'cheese',
-  VEGETABLES: 'vegetables',
-  MEAT: 'meat',
-};
-
-export const domElementsPizza = {
-  [PARAMETERS_FOR_PIZZA.SIZE]: {
+export const domPizzaOptions = {
+  [SIZE]: {
     legend: 'Размер',
     type: 'radio',
   },
-  [PARAMETERS_FOR_PIZZA.DOUGH]: {
+  [DOUGH]: {
     legend: 'Тесто',
     type: 'radio',
   },
-  [PARAMETERS_FOR_PIZZA.SAUCE]: {
+  [SAUCE]: {
     legend: 'Выберите соус',
     type: 'radio',
   },
-  [PARAMETERS_FOR_PIZZA.CHEESE]: {
+  [CHEESE]: {
     legend: 'Добавьте сыр',
     type: 'checkbox',
   },
-  [PARAMETERS_FOR_PIZZA.VEGETABLES]: {
+  [VEGETABLES]: {
     legend: 'Добавьте овощи',
     type: 'checkbox',
   },
-  [PARAMETERS_FOR_PIZZA.MEAT]: {
+  [MEAT]: {
     legend: 'Добавьте мясо',
     type: 'checkbox',
   },
 };
 
 export const initialState = {
-  [PARAMETERS_FOR_PIZZA.SIZE]: [
-    {id: '1', name: 'size', value: '30 см', cost: '200', checked: true},
-    {id: '2', name: 'size', value: '35 см', cost: '250', checked: false},
+  [SIZE]: '30 см',
+  [DOUGH]: 'Тонкое',
+  [SAUCE]: 'Томатный',
+  [CHEESE]: [],
+  [VEGETABLES]: [],
+  [MEAT]: [],
+};
+
+export const pizzaOptions = {
+  [SIZE]: [
+    {id: '1', name: 'size', value: '30 см', price: '200'},
+    {id: '2', name: 'size', value: '35 см', price: '250'},
   ],
-  [PARAMETERS_FOR_PIZZA.DOUGH]: [
-    {id: '3', name: 'dough', value: 'Тонкое', cost: '0', checked: false},
-    {id: '4', name: 'dough', value: 'Пышное', cost: '0', checked: true},
+  [DOUGH]: [
+    {id: '3', name: 'dough', value: 'Тонкое', price: '0'},
+    {id: '4', name: 'dough', value: 'Пышное', price: '0'},
   ],
-  [PARAMETERS_FOR_PIZZA.SAUCE]: [
-    {id: '5', name: 'sauce', value: 'Томатный', cost: '0', checked: false},
-    {id: '6', name: 'sauce', value: 'Белый', cost: '0', checked: true},
-    {id: '7', name: 'sauce', value: 'Острый', cost: '0', checked: false},
+  [SAUCE]: [
+    {id: '5', name: 'sauce', value: 'Томатный', price: '0'},
+    {id: '6', name: 'sauce', value: 'Белый', price: '0'},
+    {id: '7', name: 'sauce', value: 'Острый', price: '0'},
   ],
-  [PARAMETERS_FOR_PIZZA.CHEESE]: [
-    {id: '8', name: 'cheese', value: 'Моцарелла', cost: '29', checked: false},
-    {id: '9', name: 'cheese', value: 'Чеддер', cost: '29', checked: false},
-    {id: '10', name: 'cheese', value: 'Дор Блю', cost: '29', checked: false},
+  [CHEESE]: [
+    {id: '8', name: 'cheese', value: 'Моцарелла', price: '29'},
+    {id: '9', name: 'cheese', value: 'Чеддер', price: '29'},
+    {id: '10', name: 'cheese', value: 'Дор Блю', price: '29'},
   ],
-  [PARAMETERS_FOR_PIZZA.VEGETABLES]: [
-    {id: '11', name: 'vegetables', value: 'Помидор', cost: '29', checked: false},
-    {id: '12', name: 'vegetables', value: 'Грибы', cost: '29', checked: false},
-    {id: '13', name: 'vegetables', value: 'Перец', cost: '29', checked: false},
+  [VEGETABLES]: [
+    {id: '11', name: 'vegetables', value: 'Помидор', price: '29'},
+    {id: '12', name: 'vegetables', value: 'Грибы', price: '29'},
+    {id: '13', name: 'vegetables', value: 'Перец', price: '29'},
   ],
-  [PARAMETERS_FOR_PIZZA.MEAT]: [
-    {id: '14', name: 'meat', value: 'Бекон', cost: '29', checked: false},
-    {id: '15', name: 'meat', value: 'Пепперони', cost: '29', checked: false},
-    {id: '16', name: 'meat', value: 'Ветчина', cost: '29', checked: false},
+  [MEAT]: [
+    {id: '14', name: 'meat', value: 'Бекон', price: '29'},
+    {id: '15', name: 'meat', value: 'Пепперони', price: '29'},
+    {id: '16', name: 'meat', value: 'Ветчина', price: '29'},
   ],
 };

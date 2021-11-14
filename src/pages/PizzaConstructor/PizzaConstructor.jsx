@@ -2,12 +2,12 @@ import {useNavigate} from 'react-router-dom';
 import {calculateCost} from '../../utils/CalculateCost';
 import {usePizzaContext} from '../../PizzaContext';
 
-import {PARAMETERS_FOR_PIZZA, domElementsPizza} from '../../reducer/mokData';
+import {pizzaOptions, domPizzaOptions} from '../../reducer/mokData';
 
 import {Form, Fieldset} from './PizzaConstructor.styled';
 
 export const PizzaConstructor = () => {
-  const {pizza, makeOrder, updateRadioParameters, updateCheckedParameters} = usePizzaContext();
+  const {state, makeOrder, updateRadioParameters, updateCheckedParameters} = usePizzaContext();
   const navigate = useNavigate();
 
   const handleSubmit = (event) => {
@@ -17,21 +17,21 @@ export const PizzaConstructor = () => {
     navigate('/order');
   };
 
-  const renderPizzaConstructor = Object.values(PARAMETERS_FOR_PIZZA).map((parameter, index) => {
+  const renderPizzaConstructor = Object.keys(pizzaOptions).map((index) => {
     return (
       <Fieldset key={index}>
-        <legend>{domElementsPizza[parameter].legend}</legend>
+        <legend>{domPizzaOptions[index].legend}</legend>
 
-        {pizza[parameter].map((item) => {
-          return domElementsPizza[parameter].type === 'radio' ? (
+        {pizzaOptions[index].map((item) => {
+          return domPizzaOptions[index].type === 'radio' ? (
             <label key={item.id}>
               <input
                 id={item.id}
-                type={domElementsPizza[parameter].type}
+                type={domPizzaOptions[index].type}
                 name={item.name}
                 onChange={updateRadioParameters}
                 value={item.value}
-                checked={item.checked}
+                checked={state[index] === item.value}
               />
               {item.value}
             </label>
@@ -39,11 +39,11 @@ export const PizzaConstructor = () => {
             <label key={item.id}>
               <input
                 id={item.id}
-                type={domElementsPizza[parameter].type}
+                type={domPizzaOptions[index].type}
                 name={item.name}
                 onChange={updateCheckedParameters}
                 value={item.value}
-                checked={item.checked}
+                checked={state[index].includes(item.value)}
               />
               {item.value}
             </label>
@@ -58,7 +58,7 @@ export const PizzaConstructor = () => {
       <Form onSubmit={handleSubmit}>
         <h1>Собери свою пиццу</h1>
         {renderPizzaConstructor}
-        <button>Заказать за {calculateCost(pizza)} руб</button>
+        <button>Заказать за {calculateCost(state)} руб</button>
       </Form>
     </div>
   );

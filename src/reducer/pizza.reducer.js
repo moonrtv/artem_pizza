@@ -1,8 +1,13 @@
 export const reducer = (parameters, action) => {
-  if (action.type === 'checkbox') {
-    const temp = parameters[action.payload.name].map((item) =>
-      item.id === action.payload.id ? {...item, checked: !item.checked} : {...item}
-    );
+  if (action.type === 'addChecked') {
+    return {
+      ...parameters,
+      [action.payload.name]: [...parameters[action.payload.name], action.payload.value],
+    };
+  }
+
+  if (action.type === 'deleteChecked') {
+    const temp = parameters[action.payload.name].filter((value) => value !== action.payload.value);
 
     return {
       ...parameters,
@@ -11,13 +16,9 @@ export const reducer = (parameters, action) => {
   }
 
   if (action.type === 'radio') {
-    const temp = parameters[action.payload.name].map((item) =>
-      item.id === action.payload.id ? {...item, checked: true} : {...item, checked: false}
-    );
-
     return {
       ...parameters,
-      [action.payload.name]: [...temp],
+      [action.payload.name]: action.payload.value,
     };
   }
 };
